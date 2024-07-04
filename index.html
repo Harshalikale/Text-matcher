@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Match</title>
+    <style>
+        body{
+            background-color: #f0f0f0;
+           margin: 0;
+           padding: 0;
+        }
+        .app-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .texts-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .input-text {
+            width: 45%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+           
+        }
+        .match-result {
+            text-align: center;
+            font-size: 40px;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1 class="app-heading">String Comparator</h1>
+        <div class="texts-container">
+            <input type="text" class="input-text" id="input1" onkeyup="compareText()">
+            <input type="text" class="input-text" id="input2" onkeyup="compareText()">
+        </div>
+        <p class="match-result" id="match-result-text"></p>
+    </div>
+    <script>
+        function compareText() {
+            const input1Element = document.getElementById("input1");
+            const input2Element = document.getElementById("input2");
+            const resultElement = document.getElementById("match-result-text");
+
+            if (input1Element.value === input2Element.value) {
+                resultElement.innerText = "Matched!!!";
+                resultElement.style.color ="Green"
+            } else {
+                resultElement.innerText = "Not-Matched!!!";
+                resultElement.style.color = "Red"
+            }
+        }
+    </script>
+</body>
+</html>
